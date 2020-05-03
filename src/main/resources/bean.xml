@@ -1,0 +1,27 @@
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tx="http://www.springframework.org/schema/tx" 
+    xmlns:aop="http://www.springframework.org/schema/aop" xmlns:task="http://www.springframework.org/schema/task"
+    xsi:schemaLocation="
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd
+    http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/aop
+    http://www.springframework.org/schema/aop/spring-aop.xsd
+    http://www.springframework.org/schema/tx
+    http://www.springframework.org/schema/tx/spring-tx.xsd 
+    http://www.springframework.org/schema/task  
+	http://www.springframework.org/schema/task/spring-task-3.0.xsd
+    " default-lazy-init="true">
+	<bean id="message" class="com.chousann.dyproxy.model.Message">
+		<property name="content">
+			<map>
+				<entry key="msg1" value="nihao" />
+				<entry key="msg2" value="i am zxs" />
+				<entry key="msg3" value="who are you" />
+				<entry key="msg4" value="i am new " />
+			</map>
+		</property>
+	</bean>
+</beans>
