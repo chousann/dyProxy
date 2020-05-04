@@ -14,13 +14,13 @@
     http://www.springframework.org/schema/task  
 	http://www.springframework.org/schema/task/spring-task-3.0.xsd
     " default-lazy-init="true">
-	<bean id="message" class="com.chousann.dyproxy.model.Message" parent="message1">
+	<bean name="message1" class="com.chousann.dyproxy.model.Message">
 		<property name="content">
 			<map>
-				<entry key="msg1" value="nihao" />
-				<entry key="msg2" value="i am zxs" />
-				<entry key="msg3" value="who are you" />
-				<entry key="msg4" value="i am new " />
+				<entry key="msg5" value="nihao" />
+				<entry key="msg6" value="i am zxs" />
+				<entry key="msg7" value="who are you" />
+				<entry key="msg8" value="i am new " />
 			</map>
 		</property>
 	</bean>

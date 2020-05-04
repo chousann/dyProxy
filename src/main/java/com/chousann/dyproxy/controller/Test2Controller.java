@@ -24,7 +24,11 @@ public class Test2Controller {
     @RequestMapping(value="/test2")
     @CrossOrigin
     public String getSecret(String userId, String password){
-		String[] beans = acx.getBeanDefinitionNames();
+		
+		ClassPathXmlApplicationContext appcx = new ClassPathXmlApplicationContext("file:D:\\workspaces\\springworkspaces\\dyproxy\\src\\main\\resources/*.xml");
+		DefaultListableBeanFactory defaultListableBeanFactory =(DefaultListableBeanFactory) ((ConfigurableApplicationContext)acx).getBeanFactory();
+		BeanDefinition beanDefinition = defaultListableBeanFactory.getBeanDefinition("message");
+		String[] beans = appcx.getBeanDefinitionNames();
 		for (String beanName : beans) {
 			Class<?> beanType = acx.getType(beanName);
 			System.out.println("BeanName:" + beanName);
@@ -33,12 +37,6 @@ public class Test2Controller {
 			System.out.println("Bean：" + acx.getBean(beanName));
 			System.out.println("");
 		}
-		
-		
-		ClassPathXmlApplicationContext appcx = new ClassPathXmlApplicationContext("file:D:\\workspaces\\springworkspaces\\dyproxy\\src\\main\\resources\\bean.xml");
-		DefaultListableBeanFactory defaultListableBeanFactory =(DefaultListableBeanFactory) ((ConfigurableApplicationContext)acx).getBeanFactory();
-		BeanDefinition beanDefinition = defaultListableBeanFactory.getBeanDefinition("message");
-		
 		Message msg1 = (Message)appcx.getBean("message");
 		Message msg = (Message)acx.getBean("message");
 
